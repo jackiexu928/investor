@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created with IntelliJ IDEA
@@ -21,6 +22,7 @@ public class InvestorController {
     private InvestorService investorService;
 
     @GetMapping("getAllInvestor")
+    @ResponseBody
     public String getAllInvestor(){
         return JSON.toJSONString(investorService.getInvestorHoldAll());
     }
